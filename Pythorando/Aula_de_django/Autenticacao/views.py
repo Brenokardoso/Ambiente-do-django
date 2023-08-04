@@ -10,4 +10,7 @@ def cadastro(request):
 def home(request):
     return render(request,'home/entrada.html')
 
+def tela1(request):
+    return render(request,'telas/tela1.html')
+
 

@@ -1,21 +1,31 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Título{% endblock %}</title>
-</head>
-<body>
-    <header>
-        <img src="{% static 'IMG/earth.png' %}" alt="A terra Zé!">
-    </header>
-    <main>
-        {% block content %}
+<DOCTYPE html>
+    <html lang="pt-br">
+        <head>
+            <meta charset="UTF-8">
+            <title>{% block 'titulo' %} {% endblock %}</title>
+            {%block 'head'%}
+            
+            {% endblock %}
+        </head>
+        <body>
+            <header>
+                {% block 'cabeça'%}
+                
+                
+                {% endblock %}
+            </header>
+            <br>
+            <main>
+                {%block 'corpo'%}
 
-        {% endblock %}
-    </main>
-    <footer>
-        None
-    </footer>
-</body>
-</html>
+                {% endblock %}
+            </main>
+            <br>
+            <footer>
+                {% block 'pe' %}
+
+                {% endblock %}
+            </footer>
+        </body>
+    </html>
+
