@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 {% extends 'base.html' %}
 {% load static %}
 <head>
@@ -22,13 +22,17 @@
     {% endblock %}
 
     {% block 'corpo' %}
-      <form method="GET" action="{% url 'tela_url' %}">
+      <!-- <form method="GET" action="{% url 'tela_url' %}"> -->
+      <form method="POST" action="{% url 'tela_url' %}">
+        {% csrf_token %}
         <input type="text" placeholder="Digite seu nome..." name="nome" >
         <input type="email" placeholder="Digite seu email.." name="email">
         <input type="submit">
         <br>
         <br>
-      
+        Nome : {{nome}}
+        <br>
+        Email : {{email}}
 
       </form>
     {% endblock %}

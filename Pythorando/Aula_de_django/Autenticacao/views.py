@@ -5,22 +5,22 @@ import json
 
 
 def cadastro(request):    
-    
     nome = request.GET.get('nome')
     sobrenome = request.GET.get('sobrenome')
     idade = request.GET.get('idade')
+    return render(request,'cadastro/index.html',{'nome':nome,'sobrenome':sobrenome,'idade':idade})  #aqui no caso o dicionario trabalha se auto referenciando,igual um (self ou cls)
 
-    print("nome =",nome,"\nsobrenome =",sobrenome,"\nidade =",idade)
-
-    return  (request,'cadastro/index.html',{'nome':nome,'sobrenome':sobrenome,'idade':idade})  #aqui no caso o dicionario trabalha se auto referenciando,igual um (self ou cls)
 
 def home(request):
     return render(request,'home/entrada.html')
 
-def tela1(request):
-    nome = request.GET.get('nome')
-    email = request.GET.get('email')
-    # return HttpResponse(json.dumps({'nome': nome,'email': email }))
 
-    return render(request,'telas/telas1.html')
+def tela1(request):
+    # nome = request.GET.get('nome')
+    # email = request.GET.get('email')
+
+    nome = request.POST.get('nome')
+    email = request.POST.get('email')
+
+    return render(request,'telas/telas1.html',{'nome':nome,'email':email})
 
