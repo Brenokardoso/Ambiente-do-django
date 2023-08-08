@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados</title>
+</head>
+<body>
+    <main>
+        <h3>Dados:</h3>
+        <br>
+        {% for x in listar %}
+            <p style="border: 4px solid green;">
+                Nome = {{x.nome}}
+            </p>
+            <br>
+            <br>
+            Email = {{x.email}}
+            <br>
+            <br>
+            Senha = {{x.senha}}
+            <br>
+            <br>
+        {% endfor %}
+    </main>
+</body>
+</html>

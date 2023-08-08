@@ -15,7 +15,9 @@ class Pessoa(models.Model):
     senha = models.CharField(
         verbose_name = "Senha",
         max_length = 100,
-        blank =False,
-        null = False,
-        
+        blank =True,
+        null = True,   
     )
+
+    def __repr__(self):
+        return (f"{self.nome} - {self.email} - {self.senha} \n \n")

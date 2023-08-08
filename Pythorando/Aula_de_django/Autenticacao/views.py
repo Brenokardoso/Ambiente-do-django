@@ -1,6 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from django.http import HttpResponse
 from Aula_de_django.settings import BASE_DIR
+from .models import Pessoa
 import json
 
 
@@ -21,6 +22,17 @@ def tela1(request):
 
     nome = request.POST.get('nome')
     email = request.POST.get('email')
+    senha = request.POST.get('senha')
 
-    return render(request,'telas/telas1.html',{'nome':nome,'email':email})
+    pessoa = Pessoa()
+    pessoa.nome = request.POST.get('nome')
+    pessoa.email = request.POST.get('email')
+    pessoa.senha = request.POST.get('senha')
+    pessoa.id = 12
+    pessoa.save()
+    return render(request,'telas/telas1.html',{'pessoa': pessoa})
 
+def lista(request):
+    lista_pessoas = Pessoa.objects.all()
+    print(lista_pessoas)
+    return render(request,'telas/listar.html',{'listar': lista_pessoas})

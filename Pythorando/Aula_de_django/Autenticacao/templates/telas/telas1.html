@@ -27,17 +27,23 @@
         {% csrf_token %}
         <input type="text" placeholder="Digite seu nome..." name="nome" >
         <input type="email" placeholder="Digite seu email.." name="email">
+        <input type="password" placeholder="Digite a sua senha" name="senha">
         <input type="submit">
         <br>
         <br>
-        Nome : {{nome}}
+        Nome : {{pessoa.nome}}
         <br>
-        Email : {{email}}
+        Email : {{pessoa.email}}
+        <br>
+        senha : {{senha}}
+        <br>
+        id : {{pessoa.id}}
 
       </form>
     {% endblock %}
 
     {% block 'pe' %}
+    
         <p>pé</p>
     {% endblock %}
 </body>
