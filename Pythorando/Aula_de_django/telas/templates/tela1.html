@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Tela1 </title>
+    <style>
+        .corpo{
+            background-color: rgb(82, 82, 82);
+        }
+        
+    </style>
+</head>
+<body class="corpo">
+    <header style="border: 4px solid red ;">
+        <div>
+            <table>
+                <tr>
+                    <td style="float: left;">
+                        <img src="{% static 'IMG/earth.png' %}" width="200px" height="200px" alt="Sol" style="float: right;border: 7px solid purple;">
+                    </td>
+                    <td>
+                        <img src="{% static 'IMG/earth.png' %}" width="200px" height="200px" alt="Sol" style="float: right;border: 6px solid rgb(56, 194, 14);">
+                    </td>
+                </tr>
+
+                <td style="float: left;">
+                    <img src="{% static 'IMG/earth.png' %}" width="200px" height="200px" alt="Sol" style="float: right;border: 7px solid purple;">
+                </td>
+                <td>
+                    <img src="{% static 'IMG/earth.png' %}" width="200px" height="200px" alt="Sol" style="float: right;border: 6px solid rgb(56, 194, 14);">
+                </td>
+                <tr>
+
+                </tr>
+            </table>      
+        </div>
+        <section style="border: 3px solid blue; width:30% ;">
+            <h1>
+                Cabeçalho da Página
+
+            </h1>
+        </section>
+    </header>
+    
+</body>
+</html>
