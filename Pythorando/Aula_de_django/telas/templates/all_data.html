@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de todos os dados</title>
+</head>
+<body>
+    <section>
+       {% for x in os_dados %}
+        <div style="border: 0.5px solid black;">
+            <ul>
+            <li>Nome : {{x.name}}</li>
+            <br>
+            <li>Idade : {{x.idade}}</li>
+            <br>
+            <li>Email: {{x.email}}</li>
+            <br>
+            <li>Endereço: {{x.endereço}}</li>
+            <br>
+        </ul>
+        </div>
+        <br>
+       {% endfor %}
+    </section>
+</body>
+</html>
