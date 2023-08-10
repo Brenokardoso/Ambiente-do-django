@@ -7,13 +7,6 @@ def tela1(request):
 
 
 def form(request):
-
-    # nome = request.POST.get('nome')
-    # idade = request.POST.get('idade')
-    # email = request.POST.get('email')
-    # endereço = request.POST.get('email')
-
-
     formulario = Formulario()
     formulario.name = request.POST.get('name')
     formulario.idade = request.POST.get('idade')
@@ -23,5 +16,7 @@ def form(request):
     return render(request,'formulario.html',{'formulario':formulario})
 
 def view_form_data(request):
-    os_dados = Formulario.objects.all()
+    # os_dados = Formulario.objects.all()
+    os_dados = Formulario.objects.filter(name = None).filter(idade = 12).filter(endereço ='sla man') #Filtro de objetos usando o operador logico and ('e')
     return render(request,'all_data.html',{'os_dados':os_dados})
+

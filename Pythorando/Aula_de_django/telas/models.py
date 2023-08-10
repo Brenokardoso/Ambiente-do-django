@@ -6,6 +6,7 @@ class Formulario(models.Model):
         verbose_name = "Nome",
         null = True,
         blank = True,
+        
     )
     idade = models.PositiveIntegerField(
         verbose_name = "Idade",
@@ -24,3 +25,4 @@ class Formulario(models.Model):
         null = True,
         blank = True,
     )
+    

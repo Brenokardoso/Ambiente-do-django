@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from Aula_de_django.settings import BASE_DIR
 from .models import Pessoa
 import json
+import random
+
+
 
 
 def cadastro(request):    
@@ -16,19 +19,12 @@ def home(request):
     return render(request,'home/entrada.html')
 
 
-def tela1(request):
-    # nome = request.GET.get('nome')
-    # email = request.GET.get('email')
-
-    nome = request.POST.get('nome')
-    email = request.POST.get('email')
-    senha = request.POST.get('senha')
-
+def tela1(request):   
     pessoa = Pessoa()
     pessoa.nome = request.POST.get('nome')
     pessoa.email = request.POST.get('email')
     pessoa.senha = request.POST.get('senha')
-    pessoa.id = 12
+    pessoa.id = random.randint(1,999)
     pessoa.save()
     return render(request,'telas/telas1.html',{'pessoa': pessoa})
 
