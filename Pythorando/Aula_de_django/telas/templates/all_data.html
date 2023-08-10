@@ -4,24 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de todos os dados</title>
+    <link rel="stylesheet" href="{% static 'CSS/css.css'% '}">
+    <style>
+        .corpo{
+            background-color:gray;
+        }
+        
+    </style>
 </head>
-<body>
+<body class = "corpo" >
+    <header>
+        <section>
+            <a style="border: 2px solid rgb(9, 47, 217); color: rgb(246, 246, 14);float:left;" href="http://127.0.0.1:2222/telas/formulario/">Voltar para os cadastros</a>  
+        </section>
+    </header>
+    <div>
+    </div>
     <section>
-       {% for x in os_dados %}
-        <div style="border: 0.5px solid black;">
-            <ul>
-            <li>Nome : {{x.name}}</li>
+        <div></div>
+            <main>
+            {% for x in os_dados %}
+                <div style="border: 0.5px solid black;">
+                    <br style="padding: 5%;">
+                    <ul>
+                        <li>Nome : {{x.name}}</li>
+                        <br>
+                        <li>Idade : {{x.idade}}</li>
+                        <br>
+                        <li>Email: {{x.email}}</li>
+                        <br>
+                        <li>Endereço: {{x.endereço}}</li>
+                        <br>
+                        <li>Cargo : {{x.cargo}}</li>
+                    </ul>
+                </div>
+            </main>
             <br>
-            <li>Idade : {{x.idade}}</li>
-            <br>
-            <li>Email: {{x.email}}</li>
-            <br>
-            <li>Endereço: {{x.endereço}}</li>
-            <br>
-        </ul>
-        </div>
-        <br>
-       {% endfor %}
+        {% endfor %}
     </section>
 </body>
 </html>
