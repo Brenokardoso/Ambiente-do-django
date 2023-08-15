@@ -15,7 +15,7 @@
 <body class = "corpo" >
     <header>
         <section>
-            <a style="border: 2px solid rgb(9, 47, 217); color: rgb(246, 246, 14);float:left;" href="http://127.0.0.1:2222/telas/formulario/">Voltar para os cadastros</a>  
+            <a style="border: 2px solid rgb(9, 47, 217); color: rgb(246, 246, 14);float:left;" href="http://127.0.0.1:4312/telas/formulario/">Voltar para os cadastros</a>  
         </section>
     </header>
     <div>
@@ -23,7 +23,7 @@
     <section>
         <div></div>
             <main>
-            {% for x in os_dados %}
+            {% for x,y in os_dados,pessoas %}
                 <div style="border: 0.5px solid black;">
                     <br style="padding: 5%;">
                     <ul>
@@ -35,7 +35,7 @@
                         <br>
                         <li>Endereço: {{x.endereço}}</li>
                         <br>
-                        <li>Cargo : {{x.cargo}}</li>
+                        <li>Cargo : {{y.nome}}</li>
                     </ul>
                 </div>
             </main>

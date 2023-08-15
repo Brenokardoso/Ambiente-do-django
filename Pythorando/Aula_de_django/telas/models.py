@@ -2,15 +2,14 @@ from django.db import models
 # from django.db.models.fields import CharField
 
 
-
-class Cargo(models.Model):
-    name = models.CharField(
-        verbose_name = "Nome",
-        max_length = 200,
-        default = "Zé Roberto"
+class Cargos(models.Model):
+    nome = models.CharField(
+        verbose_name = "nome",
+        max_length = 100,
+        null = True,
+        blank = True,
     )
-    def __str__(self):
-        return self.name
+
 
 class Formulario(models.Model):
 
@@ -38,9 +37,11 @@ class Formulario(models.Model):
         null = True,
         blank = True,
     )
-    cargo = models.ForeignKey(
-        Cargo,
+    cargos = models.ForeignKey(
+        Cargos,
         on_delete = models.DO_NOTHING,
-        verbose_name = "Fcargo"
+        null = True,
+        blank = True
     )
+
     
