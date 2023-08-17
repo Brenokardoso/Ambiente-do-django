@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chave estrangeira</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body class="corpo">
+    <header>
+
+    </header>
+    <main>
+        <h3>
+            Faça seus registros aqui:
+        </h3>
+        <br>
+        <form method="POST" action="{% url 'chave_estrangeira' %}">
+            {% csrf_token %}
+            <input type="text" placeholder="digite seu nome..." name="nome">
+            <input type="number" placeholder="digite sua idade" name="idade">
+            <button type="submit">Enviar</button>
+        </form>
+        <section>
+            <h4>
+                Dados:
+            </h4>
+            Nome:{{nome}}
+            <br>
+            Idade:{{idade}}
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+</body>
+</html>

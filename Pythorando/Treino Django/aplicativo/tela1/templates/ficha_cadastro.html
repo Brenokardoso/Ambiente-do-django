@@ -1,18 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ficha de Cadastro</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+    <!-- <style>
+        .divisao-dados{
+            border: 3px solid rgb(74, 74, 242);
+            border-radius: 4px;
+            width: auto;
+            height: auto;
+        }
+    </style> -->
 </head>
-<body>
+<body class="corpo">
     <header>
-
+        Faça o cadastro dos seus dados:
+        <br>
+        <form  method="POST" action="{% url 'ficha_cadastro' %}">
+            {% csrf_token %}  <!--Validador de fomulários-->
+            <input type="text" placeholder="digite seu nome...:" name="nome"> 
+            <input type="number" placeholder="digite sua idade..." name="idade">
+            <input type="number" placeholder="digite seu cpf" name="cpf">
+            <input type="text" placeholder="Digite a sua altura..." name="altura">
+            <input type="number" placeholder="Digite seu peso..." name="peso">
+            <input type="text" placeholder="digite sue sexo..." name="sexo">
+            <input type="submit" value="botao">
+        </form>
     </header>
     <br>
-    <main>
-        Faça o cadastro dos seus dados:
-        <form  method="GET" action=""></form>
+    <main> 
+        <h3>
+            Dados cadastrados:
+            <br>
+        </h3>
+            {% for c in dados %}
+        <section class="divisao-dados">
+                Nome : {{c.nome}}
+                <br>
+                Idade : {{c.idade}}
+                <br>
+                CPF : {{c.cpf}}
+                <br>
+                Altura:{{c.altura}}
+                <br>
+                Peso : {{c.peso}}
+                <br>
+                Sexo: {{c.sexo}}
+                <br>
+                <a href="2">voltar</a>       
+        </section>
+        <br>
+            {% endfor %}
     </main>
     <br>
     <footer>
@@ -21,3 +62,4 @@
     <br>
 </body>
 </html>
+
