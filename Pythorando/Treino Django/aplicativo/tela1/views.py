@@ -3,6 +3,7 @@ from django.http import HttpResponse,Http404
 from aplicativo.settings import BASE_DIR 
 from .models import Cadastro,Pessoa,Cargo,Artista,Album
 from django.shortcuts import get_list_or_404
+from django.db.models import Q
 
 
 def tela1(request):
@@ -22,6 +23,9 @@ def ficha_cadastro(request):
     cadastro.peso = request.POST.get('peso')
     cadastro.sexo = request.POST.get('sexo')
     cadastro.save()
+    x = Cadastro.objects.filter(Q(nome = None) & Q(idade = None))
+    x.delete()
+
     dados = Cadastro.objects.all()
     return render(request,'ficha_cadastro.html',{'cadastro':cadastro,'dados':dados})
 

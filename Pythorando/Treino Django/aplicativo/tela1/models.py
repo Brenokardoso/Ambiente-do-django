@@ -37,6 +37,7 @@ class Cadastro(models.Model):
     def __repr__(self):
         return self.nome
     
+
 class Cargo(models.Model):
     id = models.IntegerField(
        primary_key= True
