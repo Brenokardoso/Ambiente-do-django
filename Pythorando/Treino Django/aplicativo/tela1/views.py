@@ -1,6 +1,8 @@
 from django.shortcuts import render,HttpResponse
+from django.http import HttpResponse,Http404
 from aplicativo.settings import BASE_DIR 
 from .models import Cadastro,Pessoa,Cargo,Artista,Album
+from django.shortcuts import get_list_or_404
 
 
 def tela1(request):
@@ -46,7 +48,13 @@ def manytomany(request):
     return render(request,'manytomany.html',{'pessoa':pessoa})
 
 def listar_dinamico(request,id):
-    pessoa = Pessoa.objects.filter(id = id)
+    # pessoa = Pessoa.objects.filter(id = id)
+    # tamanho = len(pessoa)
+    # if tamanho == 0:
+    #     print(tamanho)  #esse tamnaho depende do numero de registros dentro do QuerySet!
+    #     raise Http404('Essa pessoa não existe!\nDigite um ID valido!')
+    pessoa = get_list_or_404(Pessoa,id=id)
+
     return render(request,'listar_chave.html',{'pessoa':pessoa})
 
 def home(request):

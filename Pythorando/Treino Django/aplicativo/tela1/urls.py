@@ -11,5 +11,5 @@ urlpatterns = [
     path('4',chave,name='chave_estrangeira'),
     path('5',listar_chave,name='listar_chaves'),
     path('6',manytomany,name="muitos"),
-    path('listar/<int:id>',listar_dinamico,name='listar_dinamico')
+    path('listar/<int:id>/',listar_dinamico,name='listar_dinamico')
 ]
