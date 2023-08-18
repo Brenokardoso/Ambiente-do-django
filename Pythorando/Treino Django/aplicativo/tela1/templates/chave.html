@@ -18,19 +18,18 @@
         <br>
         <form method="POST" action="{% url 'chave_estrangeira' %}">
             {% csrf_token %}
-            <input type="text" placeholder="digite seu nome..." name="nome">
-            <input type="number" placeholder="digite sua idade" name="idade">
+            <input type="text" placeholder="digite seu nome..." name ="nome">
+            <input type="email"placeholder="Digite seu email.." name = "email">
+            <input type="password" placeholder="Digite sua senha" name = "senha">
+            <input type="number" placeholder="Digite seu o id do seu cargo" name = "cargo_id">
+            <br>
+            <br>
+            <input type="number" placeholder="a ID" name = "id">
+            <input type="text" placeholder="digite nome seu cargo" name = "nome_trabalho">
             <button type="submit">Enviar</button>
         </form>
-        <section>
-            <h4>
-                Dados:
-            </h4>
-            Nome:{{nome}}
-            <br>
-            Idade:{{idade}}
-
-        </section>
+        <br>
+            <a href="5">Ver dados</a>
     </main>
     <footer>
 

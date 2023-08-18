@@ -1,9 +1,21 @@
 .corpo{
-    background-color:rgb(96, 96, 96);
+    background-color:rgb(106, 106, 106);
 }
 .divisao-dados{
     border: 3px solid rgb(133, 245, 127);
     border-radius: 4px;
     width: auto;
     height: auto;
+}
+/* .item-lista{
+    font-size: medium;
+    color: chartreuse;
+    text-decoration: solid;
+    font-family: Arial, Helvetica, sans-serif;
+} */
+a{
+        font-size: medium;
+        color: rgb(89, 144, 34);
+        text-decoration: solid;
+        font-family: Arial, Helvetica, sans-serif;
 }

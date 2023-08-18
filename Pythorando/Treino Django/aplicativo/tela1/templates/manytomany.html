@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ManyToMany</title>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body class="corpo">
+    <main>
+        {% for p in pessoa %}
+        <section class="divisao-dados"> 
+                Nome : {{p.nome}}
+                <br>
+                Idade : {{p.idade}}
+                <br>
+                CPF : {{p.cpf}}
+                <br>
+                Altura:{{p.altura}}
+                <br>
+                Peso : {{p.peso}}
+                <br>
+                Sexo: {{p.sexo}}
+                <br>
+                <a href="" >voltar</a>       
+        </section>
+        <br>
+            {% endfor %}
+
+    </main>
+</body>
+</html>

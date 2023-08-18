@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+<head>
+    <title>Home de controle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        #dashboard {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin: 20px;
+            width: calc(33.33% - 40px);
+            box-sizing: border-box;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        p {
+            font-size: 16px;
+            color: #555;
+        }
+    </style>
+    <link rel="stylesheet" href="{% static 'css/css.css' %}">
+</head>
+<body class="corpo">
+    <div id="dashboard">
+        <div class="card">
+            <h1>Bem-vindo esta é minha pagina de home</h1>
+            <p>Essa aba será personalziada para deixar as urls mais rápidas e iterativas!</p>
+        </div>
+        <div class="card">
+            <h1>Informações do Usuário</h1>
+            <p>Nome: Breno Cardoso de Castro<br>Email: brenoguimaraes@mpto.mp.com</p>
+        </div>
+        <div class="card">
+            <h1>Atividades Recentes</h1>
+            <p>Suas paginas:<br>
+                <ul style="color: black;">
+                    <li>
+                        <a href="1" >
+                            tela1
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="2">
+                            tela2
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="3">
+                            ficha_cadastro
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="4">
+                            chave
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="5">
+                            listar_chave
+                        </a>
+                    </li>
+                    <li>
+                        <a href="6">
+                            manytomany
+                        </a>
+                    </li>
+                    <li>
+                        <a href="listar/0">
+                            url dinamicas
+                        </a>
+                    </li>
+
+                </ul>
+            </p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+

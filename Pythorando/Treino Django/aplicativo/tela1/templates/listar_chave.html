@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAVES CHAVES</title>
+</head>
+<body style="background-color: gray;">
+    <head>
+
+    </head>
+    <main>
+        <h4>
+            Dados:
+        </h4>
+        {% for chave in chaves %}
+        <div style="border: 3px solid blue;">
+            ID: {{chave.id}}
+            <br>
+            Nome:{{chave.nome}}
+            <br>
+            Email:{{chave.email}}
+            <br>
+            Senha:{{chave.senha}}
+            <br>
+            Cargo:{{chave.cargo}}
+        </div>
+        <br>
+        {% endfor %}
+
+        {% for p in pessoa %}
+            ID: {{p.id}}
+            <br>
+            Nome:{{p.nome}}
+            <br>
+            Email:{{p.email}}
+            <br>
+            Senha:{{p.senha}}
+            <br>
+            Cargo:{{p.cargo}}
+    
+        {% endfor %}
+
+        <!-- ids = 18,25,33 -->
+
+        {% for trab in trabalho %}
+        <div style="border: 3px solid purple;">
+            ID: {{trab.id}}
+            <br>
+            Nome:{{trab.nome}}
+            <br>
+        </div>
+        <br>
+        {% endfor %}
+        
+    </main>
+    
+</body>
+</html>
