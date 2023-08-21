@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils.safestring import mark_safe
 
 
 class Cargo(models.Model):
@@ -14,9 +14,18 @@ class Cargo(models.Model):
         return self.nome
 
 class Pessoa(models.Model):
+    foto_pessoa = models.FileField(
+        upload_to = 'fotos'
+    )
     nome = models.CharField(
         verbose_name = "Nome",
         max_length = 200,
+        null = True,
+        blank = True
+    )
+    sobrenome = models.CharField(
+        verbose_name = "Sobrenome",
+        max_length = 100,
         null = True,
         blank = True
     )
@@ -38,6 +47,13 @@ class Pessoa(models.Model):
 
     def __str__(self):
         return self.nome
+    
+    def nome_sobrenome(self):
+        return(f"{self.nome} {self.sobrenome}")
+    
+    @mark_safe
+    def foto(self):
+        return(f"<img width = '30px' src = '/media/{self.foto_pessoa}' >")
 
 class Pedido(models.Model):
     nome = models.CharField(
