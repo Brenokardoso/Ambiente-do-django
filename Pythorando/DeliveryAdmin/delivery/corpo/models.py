@@ -15,7 +15,9 @@ class Cargo(models.Model):
 
 class Pessoa(models.Model):
     foto_pessoa = models.FileField(
-        upload_to = 'fotos'
+        upload_to = 'fotos',
+        null = True,
+        blank = True,
     )
     nome = models.CharField(
         verbose_name = "Nome",
@@ -52,10 +54,11 @@ class Pessoa(models.Model):
         return(f"{self.nome} {self.sobrenome}")
     
     @mark_safe
-    def foto(self):
-        return(f"<img width = '30px' src = '/media/{self.foto_pessoa}' >")
+    def get_pega_foto(self):
+        return(f"<img width='50px' src ='/media/{self.foto_pessoa}'>")
+    
 
-class Pedido(models.Model):
+class Pedido(models.Model): 
     nome = models.CharField(
         verbose_name = "Nome do Pedido",
         max_length = 100,

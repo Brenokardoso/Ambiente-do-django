@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import Pessoa,Cargo,Pedido
+from django_object_actions import DjangoObjectActions
+from django.http import HttpResponse
 
 
 
@@ -11,18 +13,21 @@ class PedidoInLine(admin.TabularInline):
 
 
 @admin.register(Pessoa)
-class PessoaAdmin(admin.ModelAdmin):
+class PessoaAdmin(DjangoObjectActions,admin.ModelAdmin):
     inlines = [PedidoInLine]
-    list_display = ('foto','nome','email','senha','cargo','nome_sobrenome')
-    # readonly_fields = ('senha','cargo')
+    list_display = ('get_pega_foto','nome','email','senha','cargo','nome_sobrenome')
+    list_editable = ('nome',)
+    readonly_fields = ('senha','cargo')
     list_filter = ('nome',)
     search_fields = ('email',)
 
+    def mostra_pessoa(self,request,pessoa_referencia):
+        return HttpResponse(pessoa_referencia)
+    
+    mostra_pessoa.label = "mostra_pessoa" # Esse campo que mostra oq estaŕa escrito no botão
+    change_actions = ("mostra_pessoa",) #registra  o botão
 
-# @admin.register(Pedido)
-# class PedidoAdmin(admin.ModelAdmin):
-#     list_display = ('nome','quantidade','descricao')
-#     readonly_fields = ('pessoa',)
+
 
 
 admin.site.register(Cargo)
