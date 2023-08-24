@@ -52,7 +52,7 @@ def manytomany(request):
     return render(request,'manytomany.html',{'pessoa':pessoa})
 
 def listar_dinamico(request,id):
-    # pessoa = Pessoa.objects.filter(id = id)
+    pessoa = Pessoa.objects.filter(id = id)
     # tamanho = len(pessoa)
     # if tamanho == 0:
     #     print(tamanho)  #esse tamnaho depende do numero de registros dentro do QuerySet!

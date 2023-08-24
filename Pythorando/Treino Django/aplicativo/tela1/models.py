@@ -39,9 +39,6 @@ class Cadastro(models.Model):
     
 
 class Cargo(models.Model):
-    id = models.IntegerField(
-       primary_key= True
-    )
     nome = models.CharField(
         verbose_name = "Nome",
         max_length = 100,
@@ -145,5 +142,43 @@ class Album(models.Model):
     def __str__(self):
         self.titulo
 
-    
+class Data(models.Model):
+    data = models.DateField(
+        verbose_name = "Data",
         
+    )
+    
+    def __str__(self):
+        return self.data.strftime('%d/%m/%Y')
+        
+class Pedidos(models.Model):
+    nome = models.CharField(
+        verbose_name = "Nome do pedido",
+        max_length = 200,
+        null = True,
+        blank = True
+    )
+    quantidade = models.PositiveIntegerField(
+        verbose_name = "Quantidade",
+        null = True,
+        blank = True,
+    )
+    tempo_de_espera = models.TimeField(
+        verbose_name = "Tempo de espera",
+        null = True,
+        blank = True
+    )
+    total_a_pagar = models.FloatField(
+        verbose_name = "Total a pagar",
+        null = True,
+        blank = True,
+    )
+    pessoa = models.ForeignKey(
+        Pessoa,
+        on_delete = models.CASCADE,
+        null = True,
+        blank = True
+    )
+
+    def __str__(self):
+        return self.nome
